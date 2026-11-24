@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    background: #e0e1e2;
+    min-height: 100vh;
+}
+
+.menu {
+    background: #07374D;
+    margin: 70px auto;
+    height: 90%;
+    position: fixed;
+    width: 60px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.menu:hover,
+.menu.active {
+    width: 220px;
+    transition: 0.5s;
+    clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
+}
+
+.menu ul {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+
+.menu ul li {
+    position: relative;
+    width: 100%;
+}
+
+.menu ul li a {
+    color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    display: flex;
+    font-size: 15px;
+}
+
+.menu ul li a .texto {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+    text-align: start;
+    font-size: 15px;
+}
+
+.menu ul li:hover {
+    background: #03A9F5;
+    cursor: pointer;
+    border-bottom: 2px solid #03293B;
+    border-top: 2px solid #03293B;
+}
+
+.menu ul li a .icono {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+.encabezado{
+    position: absolute;
+    background: #07374D;
+    width: 100%;
+    height: 60px;
+    padding: 18px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.20);
+    
+}
+.encabezado button {
+    float: right;
+    align-items: center;
+    bottom: 10px;
+    margin: 0 25px;
+    height: 35px;
+    width: 60px;
+    position: right;
+}
+.register-btn {
+    
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAaVBMVEVLX4P////m5uacp7uAjqhLX4Rwf5zIztnS1+CHlKz8/P3L0dvm6e6gq77CydVTZoiyu8p3hqFqepddcI+NmrFkdZXh5Ors7vJRZIf19vje3+G/xM2Un7La3uXKztS3vcjU1tqpsb+5wc/W6v0VAAAE/UlEQVR4nM2b22LaMAyGjRMg5EDIqdCspWzv/5BLgBYSy/IvMPN0DfaHkWSdrBaPSJ7tok1VN+VBqUPZ1NUm2mX5Q0sp6Rf226gqFSllFW33LwVIs6ij975JF2XpawDSrLX8cuMkWgEDCpAXDbb7RZoC1QgMIImXku1HWcaJN4D1Srr7RVZrLwDJg9ufEdyn4ALI48e3HyV26QIPkBaH5/Yf/FTBWwQLkDitHpGO/R8YgDQSqz4ty4g5BDvAW+1n+1HqNznAFnR7mJRbIUAa+dx+FNvfQAO8P2l8lMTvOMD+Cd9jlxV5VVMAey/WZ0pHERAA+Yv2HwgIt2gCvOr3nwnMMzAAXrk/RTAHeH+J/t1kNbeFGUD6AvubSpyyAN79jykRB7B9/f5Kbe0Ab179v03KNxtA6vH+46ROLQD/QAEuEtEAiTj+qDcfxUcbiz3HMqEAUtk6Zbs+m7QepP/ayLSnSwmAQrJCs/t2KPoivSxzKkyAXBD/HoqbP9Pf0n9IVsgNAIEL7D7vlEjf5Cg4hHgOkODfrSbu/A5A94KLJJkB4F+d7j8B0H0FL7OaAqzxL86uMz0lwH3ZegIAH0A5D2qmAPoE2+PqHgDXACO+nwHoL3ip5A4ANoF4vr8BoGE1iG8AOeyEzRTLADiiay3zHwDYCZoHYALgR1B8A6SwAyFqLiYArAVNegXI0G+URH5nAmjYELIrQIt+YWPuTwHAKt1eAFKYeIcB/EbXG09UCf4BRdVaCIBf8ILZGQCPxKjkkgA4wQtGZwA8EqIyfAKghxfsRoA9/HFFFTkIAI2vuB8ABMmI9xMYrhYlCcapqudTOjAogVrgMYR/K1DVACAIqEE/IIivy4XK8U9794SD5Ap3Q+hd0EuSlEztBJ/2fBuOslOijNRvPDBKpDaSj6tPN4DABgbZKBEvEhPKqlyVEhYl/rgA4Lv4IrUSJbWDIcxvxNn+eF5wkUZJy0I1nxlJixWlEnelYi43FJc5H2mKMdnxv6pyeagP3OSRMyg/KYDjI1XGg1gJh79g+06fQL+TOZVRSqkZqnbmDKdWcJQWuxuhI4qN7HTuiI6yU6hFrrjBbkPJoVaSy6hFg1LBmhv8Oj4Y14ANYLgQYNuK4ICkMW9iOwBukjs0JKM6bgyAPoGKkIFBKdlz5ABQghwLyxv7IIYNACMoscTkYPn/WQB9BDSxwlIza/OfBdCAfkdQcvrB7M8BaLc/2CLpeUc3/gGA3qkGe6RAwQ8jcQDOEL1DSjRUQogCuNLECChSHRwjijzAibeEDCjTsRroBNBsDfJapuMLla5ZMAfAiVv7Wqhk/wOHBjgBWC34LtVyxersWQAmWf8pVjPl+sY5HOoC0PZf91OuZxoWLhUEAKzu8K5hYW/ZuIcynQDW/+CuZWNvWrFeGAOwli3vm1a2tl3t3N8NoC2B/6RtZ2tctj4ALEowbVxajoCqTIoBaBubtW4tWgAMBrsBaC2cN69pQ2BCMRyAbCQa7Xt6gAEY1ncDnIiFiQEG0h26rRAAoOyQGOEgh1iAKX03ANFAuYvynhrjeVToMZ7wg0zhR7mCD7OFH+cLP9AYfqQz+FBr+LHe8IPN4Ue7ww+3hx/vD//AIfwTj0XwRy6L8M98wj90WgR/6rXw9NiNj2z/8+d+owR+8DhK4CefowR+9DpK4Ge/owR++HxlCPn0+ypBH7//iMfn/38B8NpF752eyx8AAAAASUVORK5CYII=);
+    background-size: 46px;
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    font-size: 15px;
+    
+    
+    
+}
+.login-btn {
+    background: transparent;
+    outline: none;
+    position: right;
+    border:2px solid #07374D;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.login-btn:hover {
+    transition: 0.5s;
+    background: rgba(170, 7, 7, 0.25);
+}
+
+.encabezado P{
+    text-shadow:7px 4px 5px rgba(0, 0, 255, 0.781);;       
+    font-size: 1.9rem;
+    color: rgb(10, 10, 10);
+    font-family: cursive;
+    
+}
+.encabezado.logo{}
+
+.encabezado a{
+    color: #07374D;
+    background: snow;
+    outline: none;
+    float: right;  
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    margin: 0 25px;
+    margin-top: 1px;
+}

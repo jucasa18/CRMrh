@@ -1,0 +1,48 @@
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 130
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 130
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 131
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 131
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 142
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 142
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 143
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 143
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 154
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 154
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 155
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 155
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 166
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 166
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 167
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 167
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 178
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 178
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 179
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 179
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 190
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 190
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 191
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 191
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 202
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 202
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 203
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 203
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 214
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 214
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 215
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 215
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 226
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 226
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Undefined variable $fetch in C:\xampp\htdocs\inventary\extras.php on line 227
+[06-Jul-2022 17:26:23 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\inventary\extras.php on line 227
+[06-Jul-2022 17:26:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\inventary\insert_planta.php:30
+Stack trace:
+#0 C:\xampp\htdocs\inventary\insert_planta.php(30): mysqli_query(Object(mysqli), 'INSERT INTO pla...')
+#1 {main}
+  thrown in C:\xampp\htdocs\inventary\insert_planta.php on line 30
+[06-Jul-2022 22:26:52 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2
+[06-Jul-2022 22:53:26 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2
+[06-Jul-2022 22:59:25 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2
+[06-Jul-2022 22:59:28 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2
+[06-Jul-2022 23:08:43 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2
+[06-Jul-2022 23:08:53 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2
+[06-Jul-2022 23:24:32 Europe/Berlin] PHP Fatal error:  Some info in C:\xampp\htdocs\inventary\fatal_error.php on line 2

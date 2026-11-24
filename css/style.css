@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    background: #e0e1e2;
+    min-height: 100vh;
+}
+
+.menu {
+    background: #07374D;
+    margin: 100px auto;
+    height: 75%;
+    position: fixed;
+    width: 60px;
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+
+.menu:hover,
+.menu.active {
+    width: 220px;
+    transition: 0.5s;
+    clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
+}
+
+.menu ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.menu ul li {
+    position: relative;
+    width: 100%;
+}
+
+.menu ul li a {
+    color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    display: flex;
+    font-size: 25px;
+
+}
+
+.menu ul li a .texto {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+    text-align: start;
+    font-size: 15px;
+}
+
+.menu ul li:hover {
+    background: #03A9F5;
+    cursor: pointer;
+    border-bottom: 2px solid #03293B;
+    border-top: 2px solid #03293B;
+}
+
+.menu ul li a .icono {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.extras {
+    display: flex;
+    width: 100%;
+    background: #07374D;
+    height: 70px;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+    box-shadow: 3px 4px 7px 3px rgba(0, 0, 0, 0.30);
+    float: left;
+}
+
+.extras ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+}
+
+.extras ul li {
+    margin: 0 15px;
+}
+
+.extras ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 27px;
+    line-height: 50px;
+    padding: 0 5px;
+    transition: 0.4s;
+    letter-spacing: 1px;
+}
+
+.extras ul li a:hover {
+    background: #fff;
+    color: #000;
+    transition: 0.4s;
+    padding: 27px 12px;
+    border-bottom: 5px solid #105173;
+}
+
+.extras .logo {
+    font-family: 'Encode Sans SC', sans-serif;
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;
+    float: left;
+}
+.interactuar {
+    position: absolute;
+    left: 360px;
+    background: #07374D;
+    cursor: pointer;
+    
+}
+
+.interactuar.active {
+    background: #03A9F5;
+}
+
+.interactuar:before {
+    font-family: "FontAwesome";
+    content: "\f0c9";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 23px;
+    color: #FFFFFF;
+}
+
+.interactuar.active:before {
+    content: '\f00d';
+}
+
+.extras .search {
+    display: flex;
+    margin: auto 0;
+    height: 35px;
+    line-height: 35px;
+}
+
+.extras .search input {
+    border: none;
+    background: #fff;
+    padding-left: 8px;
+    outline: none;
+    width: 430px;
+}
+
+.extras .search i {
+    color: #fff;
+    font-size: 20px;
+    height: 100%;
+    font-weight: bold;
+    padding: 7px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.extras .search i::after {
+    height: 100%;
+    width: 100%;
+    content: '';
+    background: #DA1919;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+.logo span {
+    font-family: 'Encode Sans SC', sans-serif;
+    color: #DA1919;
+    font-size: 33px;
+    cursor: pointer;
+}
+
+.logo a {
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+.extras .bar {
+    position: relative;
+    margin: auto;
+    display: none;
+}
+
+.extras .bar i {
+    position: absolute;
+    color: #fff;
+    font-size: 26px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: none;
+}
+
+#contenido {
+    border: 2px solid blue;
+    height: 400px;
+}
+
+#container {
+    
+    border-color: #000 solid;
+    border-radius: 2%;
+    max-width: 1500px;
+    max-height: 1500px;
+    margin: 50px 380px;
+    position: relative;
+    float: left;
+}
+
+form {
+    padding: 15.5px;
+    margin: 1px 0;
+}
+
+h1 {
+    padding: 5.5px;
+    color: #0f0f0f;
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*div principal del calendario*/
+#calendario {
+    border-radius: 2px;
+    border: transparent;
+    max-width: 436px;
+    float: left;
+    text-align: center;
+}
+
+/*tabla del calendario*/
+#diasc {
+    background-color: #fffafa;
+    border: 1px solid black;
+    border-collapse:
+        separate;
+    border-spacing: 4px;
+}
+
+#diasc th,
+#diasc td {
+    font: normal 14pt arial;
+    width: 70px;
+    height: 30px;
+}
+
+#diasc th {
+    color: #F0F6F9;
+    background-color: #07374D
+}
+
+#diasc td {
+    color: #492736;
+    background-color: #9bf5ff
+}
+
+/*línea de la fecha actual*/
+#fechaactual {
+    font: bold 12pt arial;
+    padding: 0.4em
+}
+
+#fechaactual i {
+    cursor: pointer;
+}
+
+#fechaactual i:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/*formulario de busqueda de fechas*/
+#buscafecha {
+    background-color: #663366;
+    color: #9bf5ff;
+    padding: 5px
+}
+
+#buscafecha select,
+#buscafecha input {
+    background-color: #9bf5ff;
+    color: #990099;
+    font: bold 10pt arial;
+}
+
+#buscafecha [type=text] {
+    text-align: center;
+}
+
+#buscafecha [type=button] {
+    cursor: pointer;
+}
+
+/*cabecera del calendario*/
+#anterior {
+    float: left;
+    width: 100px;
+    font: bold 12pt arial;
+    padding: 0.5em 0.1em;
+    cursor: pointer;
+}
+
+#posterior {
+    float: right;
+    width: 100px;
+    font: bold 12pt arial;
+    padding: 0.5em 0.1em;
+    cursor: pointer;
+}
+
+#anterior:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#posterior:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#titulos {
+    font: normal 20pt "arial black";
+    padding: 0.2em;
+}
+
+.cuadrado {
+    padding: 8px;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 60px;
+    width: 300px;
+    height: 120px;
+    background-color: rgba(161, 190, 141 );
+    border-radius: 15px;
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    float: left;
+}
+.alert {
+    padding: 8px;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 60px;
+    width: 800px;
+    height: 420px;
+    font-family: 'Fira Sans', sans-serif;
+    float: left;
+}
+table {
+    width: 100%;
+
+ }
+  td {
+    width: 25%;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: top;
+    color: #000;
+    background-color: #fffbfb;
+    padding: 0.3em;
+    
+ }
+
+ th {
+    
+    text-align: center;
+    font-size: 18px;
+    background-color: #e91212;
+    color: #f9fcff;
+ }
+ #taula {
+    height: 500px !important;
+    overflow: auto;
+    width: 850px;
+    /*idth: 100%;*/
+}
+
+
+/* Card */
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  }
+  
+  .card-header,
+  .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .card-title {
+   /* padding: 20px 0 15px 0;*/
+    padding: 10px 0 5px 0;
+    /*font-size: 18px;*/
+    font-size: 23px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .card-body {
+   /* padding: 0 20px 20px 20px;*/
+   padding: 0 0px 0px 40px;
+  }
+  
+  
+  
+  .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+/* Info Cards */
+.dashboard .info-card {
+    padding-bottom: 10px;
+  }
+  
+  .dashboard .info-card h6 {
+    font-size: 28px;
+    color: #012970;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard .card-icon {
+    font-size: 32px;
+    line-height: 0;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  
+  .dashboard .sales-card .card-icon {
+    color: #4154f1;
+    background: #f6f6fe;
+  }
+  
+  .dashboard .revenue-card .card-icon {
+    color: #2eca6a;
+    background: #e0f8e9;
+  }
+  
+  .dashboard .customers-card .card-icon {
+    color: #ff771d;
+    background: #ffecdf;
+  }
+ 
