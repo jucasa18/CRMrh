@@ -222,43 +222,7 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
             <a href="listaPermisoNoLab.php">
               <i class="bi bi-circle"></i><span>Permiso a no Laborar</span>
             </a>
-            <a href="listaOmisionChecada.php">
-              <i class="bi bi-circle"></i><span>Omision de Checada</span>
-            </a>
-            <a href="listaPaseEntrada.php">
-               <i class="bi bi-circle"></i><span>Pase de Entrada</span>
-            </a>
-            <a href="listaPaseSalida.php">
-               <i class="bi bi-circle"></i><span>Pase de Salida</span>
-            </a>
-              <!--
-              <a href="retardos.php?FechaRetardo=<?php echo date('Y-m-d'); ?>">
-               <i class="bi bi-circle"></i><span>Retardos </span>
-            </a>-->
-            <a href="listaFaltas.php">
-               <i class="bi bi-circle"></i><span>Faltas</span>
-            </a>
-            <a href="listaContingencias.php">
-               <i class="bi bi-circle"></i><span>Contingencias</span>
-            </a>
-            <a href="listaTt.php">
-               <i class="bi bi-circle"></i><span>Tarjeta Temporal</span>
-            </a>
-            <a href="listaDiasFestivos.php">
-               <i class="bi bi-circle"></i><span>Dias Festivos</span>
-            </a>
-            <a href="listaHe.php">
-               <i class="bi bi-circle"></i><span>Horas Extras</span>
-            </a>
-            <a href="listaMediasHoras.php">
-               <i class="bi bi-circle"></i><span><b>½</b> Horas</span>
-            </a>
-            <a href="listaHg.php">
-               <i class="bi bi-circle"></i><span>Hombres Garantía</span>
-            </a>
-            <a href="listaGratificaciones.php">
-               <i class="bi bi-circle"></i><span>Gratificaciones</span>
-            </a>
+           
           </li>
              
           
@@ -318,15 +282,7 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
          
         </ul>
       </li><!-- End Components Nav -->
-
-
-      <li class="nav-item">
-        <a class="nav-link " href="empleadosRec.php">
-          <i class="ri-user-star-fill" style="font-size: 30px;" ></i>
-          <span>Recomendaciones</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-      
+     
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#components-nav4" data-bs-toggle="collapse" href="">
