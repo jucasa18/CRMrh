@@ -1,10 +1,5 @@
 <?php
 require_once 'config.php';
-/*define('DB_HOST','127.0.0.1:3307');
-define('DB_USER','root');
-define('DB_PASSWORD','');
-define('DB_NAME','rh');
-define('DB_CHARSET','utf-8'); */
 class Modelo{
         protected $_db;
         public function __construct(){

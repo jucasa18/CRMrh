@@ -33,11 +33,8 @@ $guradar 							= $empleado->save();
 if ($guradar) { 
 	$ida = Deducciones::maxDeducciones();
 	$idp = $ida['id'];
-	//echo $idr;                           
 	$empleado->idDeduccion 			    = $idp;
 	$guradar2 			    = $empleado->save2();
-
-	
 	echo json_encode(array(
 		//'all'  => $_POST,
 		'tipo' => $tipo ,

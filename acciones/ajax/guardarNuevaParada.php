@@ -9,12 +9,9 @@ $empleado->nombre 			    = $_REQUEST['nombre'];
 $empleado->Estatus			= 1;
 $empleado->idUsuario			= $_SESSION['id'];
 $guradar 					= $empleado->save();
-/*$guradar2 			    = $empleado->save2();
-exit();*/
 if ($guradar) { 
 	$ida = Paradas::maxIdParadas();
 	$idp = $ida['id'];
-	//echo $idr;
 	$empleado->idParada 			    = $idp;
 	$guradar2 			    = $empleado->save2();
 	echo json_encode(array(

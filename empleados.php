@@ -95,9 +95,7 @@
         </tbody>
     </table>
 
-        </div>
-
-   
+        </div>  
 
     <div class="modal fade" id="recomendaciones" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -130,10 +128,7 @@
 
 
                                 </div>
-                       <!-- <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-dark" type="submit" id="botonenviar2">Guardar</button>
-                        </div>-->
+                     
                     </div>
                        
                 </form>
@@ -150,9 +145,7 @@
 
             </main>
 
- <!--Modal para mostrar el mapa-->
-
-          
+         
 <!-- Modal para mostrar la ubicación del empleado -->
 <div class="modal fade" id="modalMapa" tabindex="-1"
      aria-labelledby="tituloMapa" aria-hidden="true">
@@ -199,26 +192,9 @@ $(document).ready(function () {
             "url": "https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
         },
             order: [[0, 'desc']]
-       // serverSide: true,
-       // ajax: 'ajaxtabla.php',
+       
     });
 });
-
-
-
-/*
-$(document).ready(function() {
-    $('#example').DataTable( {
-        "language": {
-            "lengthMenu": "Display _MENU_ records per page",
-            "zeroRecords": "Nothing found - sorry",
-            "info": "Showing page _PAGE_ of _PAGES_",
-            "infoEmpty": "No records available",
-            "infoFiltered": "(filtered from _MAX_ total records)"
-        }
-    } );
-} );
-*/
 
 function eliminaEmpleado(id){	
 
@@ -241,7 +217,7 @@ function eliminaEmpleado(id){
     }
     });
 	} else {
-	    //mensaje = "Has clickado Cancelar";
+	    
 	}
   
 }
@@ -265,19 +241,13 @@ function updateEmpleado(id){
 }
 
 function cambiaEstatus(id,estatus){	
-   // alert (estatus);
-  //  alert("entro");
- 
-    var estatus2 = document.getElementById(estatus).value;
-   // alert (estatus2);
-    var datos = 'id='+id+'&estatus='+estatus2;
-    //alert(datos);
-    $.ajax({
+     var estatus2 = document.getElementById(estatus).value;
+     var datos = 'id='+id+'&estatus='+estatus2;
+     $.ajax({
       type: 'POST',
       url: 'estatus.php',
       data: datos,
       success: function(respuesta) {
-       // alert(respuesta);
         if(respuesta=='cam'){
             alert('El empleado ha cambiado de estatus.');
             window.location='empleados.php';
@@ -297,39 +267,22 @@ if (!button) {
 }
 
 var recipient = button.getAttribute('data-bs-whatever');
-  //alert(recipient);
-        $.ajax({
+          $.ajax({
             url: 'recomendadores.php',
             type: 'post',
-          //  dataType: 'json',
             success:function(datos){
-                // alert(datos.nombre);
-             /*   exampleModal.querySelector('#id').value = datos.idr;
-                exampleModal.querySelector('#nombrer').value = datos.nombre;
-                if(datos.estatus = 1){
-                        var text = 'Activo';
-                }else{
-                        var text = 'Inactivo';
-                }
-                $("#Estatus").append("<option value='"+datos.estatus+"' selected >"+ text +"</option>");*/
-                exampleModal.querySelector('#IdDRENC2').value = recipient;
-
+                 exampleModal.querySelector('#IdDRENC2').value = recipient;
                 $("#ajaxcont").html(datos);
             }
         });
     var modalTitle = exampleModal.querySelector('.modal-title')
-    // var modalBodyInput = exampleModal.querySelector('.modal-body input')
-    // modalTitle.textContent = 'Edita la Ruta. ' + recipient
-    // modalBodyInput.value = recipient
-})
+ })
 
 function agregarecomendacion(idem,fingreso){
         var idnu = document.getElementById("IdDRENC2").value;
         var  dator = 'idnuevo='+ idem +'&idrenc=' + idnu +'&fingreso='+ fingreso ;
         console.log(dator);
-       // alert(dator);
-
-               $.ajax({
+                $.ajax({
                      url:   'acciones/ajax/guardarNuevaRecomendacion.php',
                      type: 'post',
                      dataType: 'json',
@@ -341,11 +294,11 @@ function agregarecomendacion(idem,fingreso){
                     }
               });
 
-
 }
 </script>
-<style>
 
+<style>
+    /*Estilos para el modal del mapa de Google  */
 #modalMapa .modal-dialog {
     width: 90%;
     max-width: 1100px;
@@ -375,28 +328,16 @@ function agregarecomendacion(idem,fingreso){
 
 </style>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-
-    console.log('Leaflet:', typeof L);
-    console.log('Bootstrap:', typeof bootstrap);
-    console.log('Contenedor:', document.getElementById('mapaMexico'));
-
-});
 </script>
-
 <script>
-
+    //Funciones con la appi de Google, para mostrar el mapa
 let mapaMexico = null;
 let marcadorEmpleado = null;
 let capaEstados = null;
 let datosEstados = null;
-
 // Comprobar si un punto está dentro de un polígono
 function puntoEnAnillo(punto, anillo) {
 

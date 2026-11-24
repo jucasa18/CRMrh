@@ -11,8 +11,6 @@ $empleado->Pagado			   			= 0;
 $empleado->FechaIngreso 			    = $_REQUEST['fingreso'];
 $empleado->idUsuario			= $_SESSION['id'];
 $guradar 					= $empleado->save();
-/*$guradar2 			    = $empleado->save2();
-exit();*/
 if ($guradar) { 
 	$ida = Recomendaciones::maxIdRecomendados();
 	$idp = $ida['id'];

@@ -8,8 +8,6 @@ $empleado->nombre 			    = $_REQUEST['nombre'];
 $empleado->Estatus			= 1;
 $empleado->idUsuario			= $_SESSION['id'];
 $guradar 					= $empleado->save();
-/*$guradar2 			    = $empleado->save2();
-exit();*/
 if ($guradar) { 
 	$ida = Rutas::maxIdRutas();
 	$idr = $ida['id'];

@@ -59,17 +59,9 @@ $empleado->Clabe				= $_REQUEST['Clabe'];
 $empleado->NumTajeta			= $_REQUEST['NumTajeta'];
 $empleado->Complemento			= 0;
 $empleado->NombreRecomendador  	= '';
-//$empleado->Foto			       = $Foto;
-//$empleado->FechaCambio			=  date('Y-m-d');
 $empleado->IdUsuario			= $_SESSION['id'];
-//echo $_SESSION['id'].'</br>';
-
 $guradra 					= $empleado->save();
-/*echo $guradra;
-exit();*/
-
 $id							= $guradra;
-//$id							= 210032802;
 $empleado->IdDRENC 			    = $id;
 $empleado->IdCorto              = $id;
 $idCorto 					= $empleado->editaIdCorto();
@@ -77,9 +69,7 @@ if($_FILES['file']['type'] != ""){
 	$Foto = imagen($id);
 	$empleado->Foto			       = $Foto;
 	$fotodir  = $empleado->editaFoto();
-	//$guradra2 			   	= $empleado->save2();
-
-}
+	}
 if ($guradra != "false") { 
 	$guradra2 			   	= $empleado->save2();
 }
@@ -91,9 +81,6 @@ echo json_encode(array(
 	'mensaje' => 'Empleado agregado correctamente',
 	// 'names' => $names
 ));
-//exit();
-
-
 function imagen($id){
 
 	if (($_FILES["file"]["type"]));
@@ -104,10 +91,8 @@ function imagen($id){
 
 			//Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
 			if (!((strpos($type, "gif") || strpos($type, "jpeg") || strpos($type, "jpg") || strpos($type, "png")) && ($image_size < 50000000))) {
-				//echo "<script>alert(\"Error:el tamaño o archivo no es valido\");window.location='../../empleados.php';</script>";
-
 				echo "Error:el tamaño o archivo no es valido";
-				//exit();
+				
 			}
 
 			else {

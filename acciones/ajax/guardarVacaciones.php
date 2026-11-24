@@ -3,21 +3,7 @@ include('../../auth_session.php');
 include_once '../ins/Vacaciones_principal.php'; 
 include '../ins/vacaciones.php'; 
 include '../funciones/vacaciones.php'; 
-/*
-
-$diashabiles = getDiasHabilesxrango($_REQUEST['FechaInicio'], $_REQUEST['FechaFin'], []); //se ponen descansos y/o días festivos (dias feriados)
-$numDias = count($diashabiles);
-//print_r($diashabiles);
-
-for($i = 0; $i < $numDias; $i++) {
-	$quincena = getSemana($diashabiles[$i]);
-	echo $diashabiles[$i] ." - ".$quincena."</br>";    
-
-
-}*/
-
 if ($_REQUEST['TipoVacacion'] == 3 ){
-
 	$total = 0;
 	$TototalaPagarxd = 0;
 	$PrimaVacacionalxd =0;
@@ -27,8 +13,6 @@ if ($_REQUEST['TipoVacacion'] == 3 ){
 	$TototalaPagarxd = $_REQUEST['TototalaPagarxd'];
 	$PrimaVacacionalxd 		  			= $_REQUEST['PrimaVacacionalxd'];
 	$diashabiles = getDiasHabilesxrango($_REQUEST['FechaInicio'], $_REQUEST['FechaFin'], []); //se ponen descansos y/o días festivos (dias feriados)
-
-
 }
 
 $empleado = new Vacaciones_principal();
@@ -73,15 +57,5 @@ if ($guradar) {
 		//'idu' => $id,
 		'mensaje' => 'Vacaciones agregadas correctamente', 
 	));
-
-
-
 }
-/*
-echo json_encode(array(
-	//'all'  => $_POST,
-	//'idu' => $id,
-	'mensaje' => 'Vacaciones agregadas correctamente', 
-	// 'names' => $names
-));*/
  ?>

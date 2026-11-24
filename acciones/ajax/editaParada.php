@@ -9,7 +9,7 @@
 	$empleado->Estatus		= $_REQUEST['Estatus'];
 	$empleado->idUsuario	= $_SESSION['id'];
 	$guradar 				= $empleado->edita();
-	if ($guradar) { 
+	if ($guradar) { //guarda el historico
 		$guradar2 			= $empleado->save2();
 		echo json_encode(array(
 			//'all'  => $_POST,

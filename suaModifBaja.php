@@ -1,29 +1,7 @@
 <?php
 include('header.php');
-//include ('acciones/ins/Empleados.php'); 
 include 'acciones/ins/Empleados.php'; 
 $lisEmplAct  = Empleados::listaEmpleadosActivos();
-/*$con = mysqli_connect('localhost:3307', 'root', '', 'rh');
-$instruccion_SQL = "SELECT * FROM empleados WHERE Estatus=1";
-$resultado = mysqli_query($con, $instruccion_SQL);*/
-
-/*$miFecha = "02-11-2021";
-//echo fechaEs($miFecha);
-
-function fechaEs($fecha) {
-    $fecha = substr($fecha, 0, 10);
-    $numeroDia = date('d', strtotime($fecha));
-    $dia = date('l', strtotime($fecha));
-    $mes = date('F', strtotime($fecha));
-    $anio = date('Y', strtotime($fecha));
-    $dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
-    $dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
-    $nombredia = str_replace($dias_EN, $dias_ES, $dia);
-    $meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-    $meses_EN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-    $nombreMes = str_replace($meses_EN, $meses_ES, $mes);
-    return $nombredia." ".$numeroDia." de ".$nombreMes." de ".$anio;
-    }*/
 ?>
 <style>
 .form-control {
@@ -43,12 +21,8 @@ function fechaEs($fecha) {
     border-radius: 0.375rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-
-</style>
-    
+</style>    
 <main id="main" class="main">
-
     <div class="pagetitle">
       <h1>Bajas / Modificaciones SUA</h1>
       <nav>
@@ -59,11 +33,6 @@ function fechaEs($fecha) {
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
-   
-
-  
-
   <div class="card info-card customers-card">
         <div class="card-body" style="background-color: #2B8839;">
             <h5 class="card-title" style="color: #ffffff;">Lista de Empleados</h5>
@@ -78,22 +47,14 @@ function fechaEs($fecha) {
                 <th>Planta</th>
                 <th>Nombre</th>
                 <th>Fecha de Ingreso</th>
-               <!-- <th>Puesto</th>
-                <th>Departamento</th>-->
                 <th>Tipo Nomina</th>
-              
-               <!-- <th>Recomendación</th>-->
                 <th>Modificación</th>
-               
                 <th>Baja</th>
-                
-
             </tr>
         </thead>
         <tbody>
 		<?php
-		//foreach ($resultado as $a_ => $infoRec) {
-            foreach ($lisEmplAct as $a_ => $infoRec) {
+		   foreach ($lisEmplAct as $a_ => $infoRec) {
 			?>
             <tr style="font-weight: lighter;">
                
@@ -110,11 +71,7 @@ function fechaEs($fecha) {
 
         </tbody>
     </table>
-
         </div>
-
-   
-
     <div class="modal fade" id="recomendaciones" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -142,38 +99,15 @@ function fechaEs($fecha) {
                                     </div>
                                 </div>
                                 <div id="ajaxcont">
-
-
-
                                 </div>
-                       <!-- <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-dark" type="submit" id="botonenviar2">Guardar</button>
-                        </div>-->
-                    </div>
+                      </div>
                        
                 </form>
-
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-               
+</div>               
         </div>
-        <!--fin-->
-
-
-  
-  
+        <!--fin-->  
             </main>
 <?php
     include('footer.php');
@@ -197,24 +131,7 @@ $(document).ready(function () {
     });
 });
 
-
-
-/*
-$(document).ready(function() {
-    $('#example').DataTable( {
-        "language": {
-            "lengthMenu": "Display _MENU_ records per page",
-            "zeroRecords": "Nothing found - sorry",
-            "info": "Showing page _PAGE_ of _PAGES_",
-            "infoEmpty": "No records available",
-            "infoFiltered": "(filtered from _MAX_ total records)"
-        }
-    } );
-} );
-*/
-
 function eliminaEmpleado(id){	
-
     var mensaje;
     var opcion = confirm("¿Deseas eliminar al empleado?");
     if (opcion == true) {
@@ -258,19 +175,13 @@ function updateEmpleado(id){
 }
 
 function cambiaEstatus(id,estatus){	
-   // alert (estatus);
-  //  alert("entro");
- 
     var estatus2 = document.getElementById(estatus).value;
-   // alert (estatus2);
     var datos = 'id='+id+'&estatus='+estatus2;
-    //alert(datos);
-    $.ajax({
+     $.ajax({
       type: 'POST',
       url: 'estatus.php',
       data: datos,
       success: function(respuesta) {
-       // alert(respuesta);
         if(respuesta=='cam'){
             alert('El empleado ha cambiado de estatus.');
             window.location='empleados.php';
@@ -285,39 +196,20 @@ var exampleModal = document.getElementById('recomendaciones')
 exampleModal.addEventListener('show.bs.modal', function (event) {
   var button = event.relatedTarget
   var recipient = button.getAttribute('data-bs-whatever')
-  //alert(recipient);
         $.ajax({
             url: 'recomendadores.php',
             type: 'post',
-          //  dataType: 'json',
-            success:function(datos){
-                // alert(datos.nombre);
-             /*   exampleModal.querySelector('#id').value = datos.idr;
-                exampleModal.querySelector('#nombrer').value = datos.nombre;
-                if(datos.estatus = 1){
-                        var text = 'Activo';
-                }else{
-                        var text = 'Inactivo';
-                }
-                $("#Estatus").append("<option value='"+datos.estatus+"' selected >"+ text +"</option>");*/
+                success:function(datos){
                 exampleModal.querySelector('#IdDRENC2').value = recipient;
-
                 $("#ajaxcont").html(datos);
             }
         });
     var modalTitle = exampleModal.querySelector('.modal-title')
-    // var modalBodyInput = exampleModal.querySelector('.modal-body input')
-    // modalTitle.textContent = 'Edita la Ruta. ' + recipient
-    // modalBodyInput.value = recipient
 })
-
 function agregarecomendacion(idem,fingreso){
         var idnu = document.getElementById("IdDRENC2").value;
         var  dator = 'idnuevo='+ idem +'&idrenc=' + idnu +'&fingreso='+ fingreso ;
-        console.log(dator);
-       // alert(dator);
-
-               $.ajax({
+                    $.ajax({
                      url:   'acciones/ajax/guardarNuevaRecomendacion.php',
                      type: 'post',
                      dataType: 'json',
@@ -328,7 +220,5 @@ function agregarecomendacion(idem,fingreso){
                           window.location.href= 'empleados.php';
                     }
               });
-
-
 }
 </script>

@@ -13,16 +13,10 @@ require_once dirname(__FILE__).'/vendor/autoload.php';
 use Spipu\Html2Pdf\Html2Pdf;
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
-/*
-$id=6;*/
 $id= $_GET['idempleado'];
 creaPDF($id);
-
-
-
-
 function creaPDF($id){ 
-    $con = mysqli_connect('localhost', 'root', '', 'rh');
+    $con = mysqli_connect('localhost', 'root', '', 'rh',13307);
     $SQL = "SELECT *, DATE_ADD(FechaIngreso, INTERVAL 30 DAY) AS Ftermino FROM empleados WHERE Estatus=1 AND IdDRENC='$id'";
     $resultado = mysqli_query($con, $SQL);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);

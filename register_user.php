@@ -9,11 +9,15 @@ $username = "";
 $name = "";
 $group = "";
 $email = "";
-$errors = array();
+$errors = array();  
 $day = date("Y-m-d");
 
 // Conexión a la base de datos
-$db = mysqli_connect('localhost', 'root', '', 'rh');
+$db = mysqli_connect('127.0.0.1:13307', 'root', '', 'rh');   
+
+
+
+
 
 if (!$db) {
     die("Error de conexión: " . mysqli_connect_error());

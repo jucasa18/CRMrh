@@ -1,9 +1,7 @@
 <?php
 include('../../auth_session.php');
 include_once '../ins/Empleados_update.php'; 
-
-
-
+//Edita los datos del empleado
 $empleado = new Empleados_update();
 $empleado->IdDRENC 			    = $_REQUEST['IdDRENC'];
 $empleado->IdPlanta 			= $_REQUEST['IdPlanta'];
@@ -62,71 +60,12 @@ $empleado->NumTajeta			= $_REQUEST['NumTajeta'];
 $empleado->SueldoEsp			= $_REQUEST['SueldoEsp'];
 //$empleado->FechaCambio			=  date('Y-m-d');
 $empleado->IdUsuario			= $_SESSION['id'];
-
-
-
-/*
-//upload por separado
-if (isset($_REQUEST["save"]) =='actFt') {
-	if (($_FILES["file"]["type"]));
-	$type = $_FILES['file']['type'];
-	$tmp_name = $_FILES['file']["tmp_name"];
-	$image_size = $_FILES['file']['size'];
-	$name_image = $_FILES['file']["name"];
-	echo $type;
-	echo $tmp_name;
-	echo $image_size;
-	echo $name_image;
-	
- //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
-	 if (!((strpos($type, "gif") || strpos($type, "jpeg") || strpos($type, "jpg") || strpos($type, "png")) && ($image_size < 50000000))) {
-		echo "<script>alert(\"Error:el tamaño o archivo no es valido\");window.location='empleados.php';</script>";
-	 }
-	 else {
-
-	$idUf = $_REQUEST["IdUf"];
-	//$nuevo_path = "uploads/" . $name_image;
-	$extension = pathinfo($name_image, PATHINFO_EXTENSION);
-	$nuevo_path = "uploads/" . $$id. "." . $extension;
-	move_uploaded_file($tmp_name, $nuevo_path);
-	$array = explode('.', $nuevo_path);
-	$ext = end($array);
-	$sql = "UPDATE empleados SET Foto='$nuevo_path'
-	WHERE IdDRENC = '$idUf'";
-	$resultado = mysqli_query($conexion,$sql);
-	
-	$instruccion_SQL="insert into histempleados VALUES ('', '".$_SESSION['id']."', '".$id."', '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '', '',  '',  '',  '',  '',  '', '', 
-	 '',  '',  '',  '',  '',  '',  '', '',  '',  '',  '',  '',  '',  '',  '',  '',  '', '',  '',  '',  '',  '','','','','','".$nuevo_path."',1,'','".date('Y-m-d H:i:s')."')";
-	$resultado2 = mysqli_query($conexion, $instruccion_SQL);	
-	
-	
-
-	if ($resultado and $resultado2== FALSE) {
-		echo "<script>alert(\"Algo salio mal, volver a intentarlo\");window.location='edit_employee.php?idempleado=$idUf';</script>";
-	} else
-		echo "<script>alert(\"Imagen Actualizada\");window.location='edit_employee.php?idempleado=$idUf';</script>";
-		mysqli_close($connexion);
-
-		
-   }
-   exit();
-}
-*/
-
-
-
-
 $guradra 					= $empleado-> edita();
 $id							= $empleado->IdDRENC;
-if ($guradra) { 
+if ($guradra) { //si guarda bien los datos, guarda el historico
 	$guradra2 			    = $empleado->save3();
-
-//	$id = 12354;
-	//echo "mensaje enviado correctamente";
 	}
-
-	//echo $id;
-
+	//envia la respuesta por json
 echo json_encode(array(
 	'all'  => $_POST,
 	'id' => $id,

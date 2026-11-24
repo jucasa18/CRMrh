@@ -14,9 +14,8 @@ if ($user) { // if user exists
     }
 	exit();
   }
-
+    
 $pass = $_REQUEST['password_1'];
-//$password = md5($pass);//encrypt the password before saving in the database
 $password = password_hash($pass, PASSWORD_DEFAULT);//nueva validación para guardar las comtraseñas de los usuarios
 $empleado = new Users_principal();
 $empleado->name 			    = $_REQUEST['name'];
